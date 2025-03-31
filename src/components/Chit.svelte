@@ -1,10 +1,15 @@
-<div class="chit">
-  <div class="author">Nauman</div>
-  <div class="handle">@recluze</div>
+<script>
+  export let content
+  export let author
+  export let handle
+  export let id
+</script>
+
+<div class="chit" {id}>
+  <div class="author">{author}</div>
+  <div class="handle">{handle}</div>
   <div class="chit-content">
-    Does anyone here use an e-ink reader? Is it closer in feel (for the eyes,
-    not fingers) to an iPad or to an actual paper book? And this can go on and
-    on ...
+    {content}
   </div>
   <div class="chit-meta">
     <div class="rechit"><i class="fa-solid fa-retweet"></i> 2</div>
