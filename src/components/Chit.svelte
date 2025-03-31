@@ -5,7 +5,7 @@
   export let id
 </script>
 
-<div class="chit" {id}>
+<div class="chit" id="chit-{id}">
   <div class="author">{author}</div>
   <div class="handle">{handle}</div>
   <div class="chit-content">

@@ -1,18 +1,7 @@
 <script>
   import { ChitStore } from '../stores/ChitStore.js'
-  import { onMount, onDestroy } from 'svelte'
 
   let newChitValue
-  let allChits
-  let chitStoreUnsub = ChitStore.subscribe((data) => (allChits = data))
-
-  // onMount(() => {
-  //   console.log('component Mounted')
-  // })
-
-  onDestroy(() => {
-    chitStoreUnsub()
-  })
 
   function createChit() {
     // console.log(newChit)
@@ -22,7 +11,7 @@
       content: newChitValue,
       handle: '@blah',
     }
-    ChitStore.set([...allChits, newChit])
+    ChitStore.addNewChit(newChit)
   }
 </script>
 
