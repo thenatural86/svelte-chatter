@@ -25,6 +25,11 @@ function createChitStore() {
         return pastChits
       })
     },
+    deleteChit: (id) => {
+      update((pastChits) => {
+        return pastChits.filter((chit) => chit.id !== id)
+      })
+    },
   }
 }
 

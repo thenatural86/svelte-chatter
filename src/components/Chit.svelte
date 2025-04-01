@@ -10,6 +10,11 @@
     // console.log('Liked', id)
     ChitStore.likeChit(id)
   }
+
+  function onDelete(id) {
+    console.log('delete', id)
+    ChitStore.deleteChit(id)
+  }
 </script>
 
 <div class="chit" id="chit-{id}">
@@ -24,7 +29,11 @@
       <i class="fa-solid fa-thumbs-up" />{likes}
     </div>
     <div class="save"><i class="fa-solid fa-share-alt"></i></div>
-    <div class="delete"><i class="fa-solid fa-trash"></i></div>
+    <div class="delete">
+      <button on:click={() => onDelete(id)}>
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
   </div>
 </div>
 
