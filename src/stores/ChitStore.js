@@ -1,25 +1,29 @@
 import { writable } from 'svelte/store'
 
-// export const ChitStore = writable([
-// { id: 1, author: 'Smalls', handle: '@youknowwhoiam', content: 'First Chit' },
-// ])
-
 function createChitStore() {
   const { subscribe, set, update } = writable([
     {
       id: 1,
-      author: 'Smalls',
+      author: 'Kevin Durant',
       handle: '@youknowwhoiam',
       content: 'First Chit',
+      likes: 0,
     },
   ])
 
   return {
     subscribe,
-    // set,
     update,
     addNewChit: (newChit) => {
       update((e) => [...e, newChit])
+    },
+    likeChit: (id) => {
+      update((pastChits) => {
+        pastChits.map((chit) => {
+          if (chit.id == id) chit.likes += 1
+        })
+        return pastChits
+      })
     },
   }
 }

@@ -10,6 +10,7 @@
       author: 'Blah',
       content: newChitValue,
       handle: '@blah',
+      likes: 0,
     }
     ChitStore.addNewChit(newChit)
   }
