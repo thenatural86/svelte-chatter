@@ -1,15 +1,8 @@
 import { writable } from 'svelte/store'
+import { incLike, fetchChits } from '../backend/Api.js'
 
 function createChitStore() {
-  const { subscribe, set, update } = writable([
-    {
-      id: 1,
-      author: 'Kevin Durant',
-      handle: '@youknowwhoiam',
-      content: 'First Chit',
-      likes: 0,
-    },
-  ])
+  const { subscribe, set, update } = writable(fetchChits())
 
   return {
     subscribe,
@@ -22,6 +15,7 @@ function createChitStore() {
         pastChits.map((chit) => {
           if (chit.id == id) chit.likes += 1
         })
+        incLike(id)
         return pastChits
       })
     },
