@@ -1,18 +1,18 @@
 {
   "chits": [
     {
-      "id": 1,
+      "id": "1",
       "author": "Kevin Durant",
       "handle": "@youknowwhoiam",
       "content": "First Chit",
-      "likes": 0
+      "likes": 6
     },
     {
-      "id": 2,
+      "id": "2",
       "author": "Lebron James",
       "handle": "@theking",
       "content": "Second Chit",
-      "likes": 0
+      "likes": 2
     }
   ]
 }
