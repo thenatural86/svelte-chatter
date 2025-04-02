@@ -2,7 +2,7 @@ import { writable } from 'svelte/store'
 import { incLike, fetchChits } from '../backend/Api.js'
 
 function createChitStore() {
-  const { subscribe, set, update } = writable(fetchChits())
+  const { subscribe, set, update } = writable([])
 
   return {
     subscribe,
@@ -23,6 +23,10 @@ function createChitStore() {
       update((pastChits) => {
         return pastChits.filter((chit) => chit.id !== id)
       })
+    },
+    loadChits: async () => {
+      let data = await fetchChits()
+      set(data)
     },
   }
 }
